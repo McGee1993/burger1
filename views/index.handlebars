@@ -1,0 +1,68 @@
+<div class="jumbotron text-center enter_selection" style="background-color:rgb(204, 218, 20)">
+    <h1 class="display-4">Eat Da Burger!</h1>
+    <hr class="my-6">
+    <p class="lead">Enter a burger that you would like to eat!</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <div id='avail'>
+                <h2>Burgers Available to Eat:</h2>
+                <ul>
+                    {{#each burgers}} {{#unless this.devoured}}
+                    <li>
+                        {{this.id}}. {{this.burger_name}}
+
+                        <form action="/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="devoured" value="false">
+                            <button class="btn btn-warning" type="submit">Eat Burger!</button>
+                        </form>
+
+                    </li>
+                    {{/unless}} {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col text-center">
+            <div id='devoured'>
+                <h2>Burgers That Have <br>Been Devoured: </h2>
+
+                <ul>
+                    {{#each burgers}} {{#if this.devoured}}
+                    <li>
+                        {{this.id}}. {{this.burger_name}}
+                    </li>
+                    {{/if}} {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="my-2">
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col text-center">
+            <div id='add'>
+                <h2>Add a Burger: </h2>
+                <form class="create-update-form" action="/" method="POST">
+                    <div class="form-group">
+                        <label for="dab">Burger Name:</label>
+                        <input type="text" id="dab" name="burger_name">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Add Burger</button>
+                </form>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<div class="container text-center" style="height: 100px">
+    <br>
+    <footer></footer>
+</div>
