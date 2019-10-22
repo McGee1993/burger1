@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jybragg/burger.git"
+    "url": "git+https://github.com/McGee1993/burger.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jybragg/burger/issues"
+    "url": "https://github.com/McGee1993/burger/issues"
   },
-  "homepage": "https://github.com/jybragg/burger#readme",
+  "homepage": "https://github.com/McGee1993/burger#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
